@@ -10,5 +10,10 @@ export const routingDemoRoutes: Routes = [
     {
         path:'params-id',
         loadChildren: () => import('./params/params.routing').then(m => m.paramRouting)
+    },
+
+    {
+        path: 'query-param',
+        loadChildren: () => import('./query-params/query-param.routing').then(m => m.QueryParamRouting)
     }
 ]

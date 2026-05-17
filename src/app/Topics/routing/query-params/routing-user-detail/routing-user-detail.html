@@ -1,0 +1,21 @@
+<h2>User Detail</h2>
+
+<p>User ID: {{ userIDSignals() }}</p>
+
+<p>Mode: {{ userSignalMode() }}</p>
+
+@if(userSignalMode() === 'edit'){
+  <p>You are in EDIT mode</p>
+}
+
+@if(userMode === 'edit'){
+    <p>You are in EDIT mode</p>
+}
+
+@if(userSignalMode() === 'view'){
+  <p>You are in VIEW mode</p>
+}
+
+@if(userMode === 'view'){
+    <p>You are in VIEW mode</p>
+}
