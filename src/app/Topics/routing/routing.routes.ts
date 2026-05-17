@@ -15,5 +15,9 @@ export const routingDemoRoutes: Routes = [
     {
         path: 'query-param',
         loadChildren: () => import('./query-params/query-param.routing').then(m => m.QueryParamRouting)
+    },
+    {
+        path: 'can-activate',
+        loadChildren: () => import('./guard/canactivated-guard/canactivate-guard.route').then(m => m.canActivateGuard)
     }
 ]
