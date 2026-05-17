@@ -1,0 +1,48 @@
+<div class="form-section">
+    <form [formGroup]="userForm" (submit)="userDetailSubmit()">
+
+  <!-- Full Name -->
+  <div>
+    <label>Full Name</label>
+    <input type="text" formControlName="fullName" />
+  </div>
+
+  <!-- Gender -->
+  <div>
+    <label>Gender</label>
+
+    <label>
+      <input type="radio" formControlName="gender" value="male" />
+      Male
+    </label>
+
+    <label>
+      <input type="radio" formControlName="gender" value="female" />
+      Female
+    </label>
+  </div>
+
+  <!-- Occupation -->
+  <div>
+    <label>Occupation</label>
+    <select formControlName="occupation">
+      <option value="">Select</option>
+      <option value="developer">Developer</option>
+      <option value="designer">Designer</option>
+    </select>
+  </div>
+
+  <!-- Terms -->
+  <div>
+    <label>
+      <input type="checkbox" formControlName="terms" />
+      Accept Terms & Conditions
+    </label>
+  </div>
+
+  <button type="submit">Submit</button>
+
+</form>
+</div>
+
+<user-detail-list></user-detail-list>

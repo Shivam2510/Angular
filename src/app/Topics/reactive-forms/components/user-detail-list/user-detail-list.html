@@ -1,0 +1,11 @@
+
+<div class="user-details">
+    @for(user of (userDetails | async) ?? []; track user.id){
+        <div class="user-card">
+        <h3>{{ user.fullName }}</h3>
+        <p>{{ user.gender }}</p>
+        <p>{{ user.occupation }}</p>
+        <button type="button" (click)="editDetails(user)">Edit detials</button>
+        </div>
+    }
+</div>

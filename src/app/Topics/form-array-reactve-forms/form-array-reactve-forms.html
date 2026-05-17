@@ -1,0 +1,116 @@
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+
+  <input
+    type="text"
+    formControlName="fullName"
+    placeholder="Full Name"
+  />
+
+  @if (userForm.get('fullName')?.pending) {
+    <p>Checking fullname...</p>
+  }
+
+  @if (
+    userForm.get('fullName')?.touched &&
+    userForm.get('fullName')?.hasError('usernameTaken')
+  ) {
+    <p>Username is required</p>
+  }
+
+  <input
+    type="number"
+    formControlName="age"
+    placeholder="age"
+  />
+
+  @if(userForm.get('age')?.hasError('invalidAgeRange')){
+    <p>Age must be between 25 and 60</p>
+  }
+
+  <input
+    type="password"
+    formControlName="password"
+    placeholder="Password"
+    />
+
+    <input
+    type="password"
+    formControlName="confirmPassword"
+    placeholder="Confirm Password"
+    />
+
+    @if (
+    userForm.touched &&
+    userForm.hasError('passwordMismatch')
+    ) {
+    <p>Password does not match</p>
+    }
+
+  <input
+    type="text"
+    formControlName="wifeName"
+    placeholder="Wife Name"
+  />
+
+  <input
+    type="number"
+    formControlName="wifeAge"
+    placeholder="Wife Age"
+  />
+
+  @if(userForm.get('wifeAge')?.hasError('invalidAgeRange')){
+    <p>Age must be between 20 and 56</p>
+  }
+
+  <input
+    type="text"
+    formControlName="mobileNumber"
+    placeholder="Mobile Number"
+  />
+
+  <div formArrayName="children">
+    @for (child of children?.controls; track child; let i = $index) {
+      <div [formGroupName]="i">
+
+        <input
+          type="text"
+          formControlName="childName"
+          placeholder="Child Name"
+        />
+
+        <input
+          type="number"
+          formControlName="childAge"
+          placeholder="Child Age"
+        />
+
+        @if(child.get('childAge')?.errors?.['invalidChildAge']){
+            <p>Age must be between 1 and 18</p>
+        }
+
+         @if(child.get('childAge')?.hasError('invalidChildAge')){
+            <p>Age must be between 1 and 18</p>
+        }
+
+
+        <button type="button" (click)="removeChild(i)">
+          Remove Child
+        </button>
+
+      </div>
+    }
+
+    @if (children.hasError('minimumChildRequired')) {
+        <p>At least one child is required</p>
+    }
+  </div>
+
+  <button type="button" (click)="addChild()">
+    Add Child
+  </button>
+
+  <button type="submit">
+    Submit
+  </button>
+
+</form>

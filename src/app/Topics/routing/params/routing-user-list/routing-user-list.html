@@ -1,0 +1,15 @@
+<h1>Routing Params Demo</h1>
+
+@for(user of users; track user.id){
+
+  <div>
+
+    <h3>{{ user.name }}</h3>
+
+    <button (click)="navigateToUserDetails(user.id)">
+      View Details
+    </button>
+
+  </div>
+
+}
