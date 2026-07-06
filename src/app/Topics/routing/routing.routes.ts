@@ -19,5 +19,9 @@ export const routingDemoRoutes: Routes = [
     {
         path: 'can-activate',
         loadChildren: () => import('./guard/canactivated-guard/canactivate-guard.route').then(m => m.canActivateGuard)
+    },
+    {
+        path: 'can-deactivate',
+        loadChildren: () => import("./guard/candeactivate-guard/canDeactivate.routing").then(m => m.canDeactivateRoutes)
     }
 ]
