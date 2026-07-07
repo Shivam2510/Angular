@@ -69,7 +69,7 @@
   />
 
   <div formArrayName="children">
-    @for (child of children?.controls; track child; let i = $index) {
+    @for (child of children.controls; track child; let i = $index) {
       <div [formGroupName]="i">
 
         <input
