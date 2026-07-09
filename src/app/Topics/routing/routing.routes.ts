@@ -27,5 +27,9 @@ export const routingDemoRoutes: Routes = [
     {
         path: 'can-activate-child',
         loadChildren: () => import("./guard/canactivate-child/canactivate-child.routing").then(m => m.canActivateChildRoutes)
+    },
+    {
+        path: 'can-match',
+        loadChildren: () => import("./guard/can-match/can-match.routes").then(m => m.canMatchRoutes)
     }
 ]
