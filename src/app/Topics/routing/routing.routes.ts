@@ -31,5 +31,9 @@ export const routingDemoRoutes: Routes = [
     {
         path: 'can-match',
         loadChildren: () => import("./guard/can-match/can-match.routes").then(m => m.canMatchRoutes)
+    },
+    {
+        path: 'resolve',
+        loadChildren: () => import("./guard/resolve/resolve.routing").then(m => m.resolveRoutes)
     }
 ]
