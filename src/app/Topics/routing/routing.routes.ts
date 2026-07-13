@@ -35,5 +35,9 @@ export const routingDemoRoutes: Routes = [
     {
         path: 'resolve',
         loadChildren: () => import("./guard/resolve/resolve.routing").then(m => m.resolveRoutes)
+    },
+    {
+        path: 'redirect-prefix-full-match',
+        loadChildren: () => import("./redirect-prefix-full-match/redirect-prefix-ful-match.routing").then(m => m.redirectPrifixAndFullMatch)
     }
 ]
