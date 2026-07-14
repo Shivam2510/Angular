@@ -39,5 +39,9 @@ export const routingDemoRoutes: Routes = [
     {
         path: 'redirect-prefix-full-match',
         loadChildren: () => import("./redirect-prefix-full-match/redirect-prefix-ful-match.routing").then(m => m.redirectPrifixAndFullMatch)
+    },
+    {
+        path: 'wildcard',
+        loadChildren: () => import("./wildcard/wildcrd.routing").then(m => m.wildcardRoutes)
     }
 ]
