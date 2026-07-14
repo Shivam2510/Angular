@@ -43,5 +43,9 @@ export const routingDemoRoutes: Routes = [
     {
         path: 'wildcard',
         loadChildren: () => import("./wildcard/wildcrd.routing").then(m => m.wildcardRoutes)
-    }
+    },
+    {
+        path: 'routerLinkActive',
+        loadChildren: () => import("./router-like-active/routerLinkActive.routing").then(m => m.routerLinkActiveRoutes)
+    },
 ]
