@@ -48,4 +48,8 @@ export const routingDemoRoutes: Routes = [
         path: 'routerLinkActive',
         loadChildren: () => import("./router-like-active/routerLinkActive.routing").then(m => m.routerLinkActiveRoutes)
     },
+    {
+        path: 'navigation',
+        loadChildren: () => import('./navigation/navigation.routes').then(m => m.navigationRoutes)
+    }
 ]
