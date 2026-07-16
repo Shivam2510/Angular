@@ -1,0 +1,54 @@
+<h1>RouterLinkActive Demo</h1>
+
+<nav>
+
+    <a
+        routerLink="/routing-demo/routerLinkActive/home"
+
+        routerLinkActive="active">
+
+        Home
+
+    </a>
+
+    |
+
+    <a
+        routerLink="/routing-demo/routerLinkActive/users"
+
+        routerLinkActive="active">
+
+        Users
+
+    </a>
+
+    |
+
+    <a
+        routerLink="/routing-demo/routerLinkActive/about"
+
+        routerLinkActive="active">
+
+        About
+
+    </a>
+
+    |
+
+    <a
+        routerLink="/routing-demo/routerLinkActive/home/home-child"
+
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{
+            exact:true
+        }">
+
+        Home child
+
+    </a>
+
+</nav>
+
+<hr>
+
+<h2>Home Page</h2>
