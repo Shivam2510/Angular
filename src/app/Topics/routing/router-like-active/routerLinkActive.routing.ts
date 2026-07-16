@@ -31,6 +31,10 @@ export const routerLinkActiveRoutes:Routes = [
     loadComponent: () =>
       import('./components/about/about')
         .then(m => m.About)
-  }
+  },
 
+  {
+    path: 'home/home-child',
+    loadComponent: () => import('./components/home-child/home-child').then(m => m.HomeChild)
+  }
 ]
