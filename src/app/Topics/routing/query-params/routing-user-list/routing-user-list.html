@@ -1,0 +1,18 @@
+<h1>Routing Params Demo</h1>
+
+@for(user of users; track user.id){
+
+  <div>
+    <h3>{{ user.name }}</h3>
+
+    <button (click)="openUser(user.id, 'view')">
+      View
+    </button>
+
+    <button (click)="openUser(user.id, 'edit')">
+      Edit
+    </button>
+
+  </div>
+
+}

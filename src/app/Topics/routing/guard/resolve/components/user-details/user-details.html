@@ -1,0 +1,18 @@
+<!-- Old Approach -->
+ <h1>User Detail</h1>
+
+<p>ID : {{ user?.id }}</p>
+
+<p>Name : {{ user?.name }}</p>
+
+<p>Email : {{ user?.email }}</p>
+
+<!-- New Approach -->
+
+<h1>User Detail</h1>
+
+<p>ID : {{ userData()?.id }}</p>
+
+<p>Name : {{ userData()?.name }}</p>
+
+<p>Email : {{ userData()?.email }}</p>

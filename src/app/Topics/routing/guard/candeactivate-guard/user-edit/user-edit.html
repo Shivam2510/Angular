@@ -1,0 +1,36 @@
+<h1>Edit User</h1>
+
+<form [formGroup]="userForm">
+
+  <input
+    type="text"
+    formControlName="fullName"
+    placeholder="Full Name"
+  />
+
+  @if(userForm.get('name')?.pending){
+    <p>Chekng user name</p>
+  }
+
+  @if(userForm.get('name')?.hasError('usernameTaken')){
+
+      <p>User name already taken</p>
+  }
+
+  <input
+    type="email"
+    formControlName="email"
+    placeholder="Email"
+  />
+
+  <button
+    type="button"
+    (click)="saveForm()">
+    Save
+  </button>
+
+</form>
+
+<a routerLink="/routing-demo/can-deactivate">
+    Go Home
+</a>
